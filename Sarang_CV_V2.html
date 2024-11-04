@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SARANG KADAMPANAL | 4th Year Electrical Engineer Student</title>
+    <style>
+        /* Reset Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Dark Mode Styling */
+        body {
+            background-color: #1b1b1d;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        /* Container Styling */
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        /* Cover Image Styling */
+        .cover-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 350px;
+            background: url('POWER-SECTOR.jpg') no-repeat center center;
+            background-size: cover;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #333;
+            display: block;
+            margin: 0 auto 20px;
+        }
+        header h1 {
+            font-size: 2.5em;
+            color: #e5e5e5;
+        }
+        header p {
+            color: #a0a0a0;
+        }
+
+        /* Summary and Skills Section */
+        .summary {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            gap: 20px;
+        }
+        .summary-text {
+            flex: 1;
+            font-size: 1.1em;
+            line-height: 1.5;
+            color: #c9c9c9;
+        }
+        .skills {
+            flex: 1;
+            padding: 10px;
+            background-color: #292929;
+            border-radius: 8px;
+        }
+        .skills h2 {
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        .skill-bar {
+            margin: 10px 0;
+            color: #dcdcdc;
+        }
+        .skill-bar .skill {
+            display: flex;
+            justify-content: space-between;
+        }
+        .skill-level {
+            height: 8px;
+            background-color: #3a3a3a;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .skill-level span {
+            display: block;
+            height: 100%;
+            background-color: #ffaa1d; /* Blue accent */
+        }
+
+        /* Work Experience Section */
+        .experience-section {
+            margin-top: 40px;
+        }
+        .experience-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 10px 0;
+            scroll-behavior: smooth;
+        }
+        .experience-container::-webkit-scrollbar {
+            display: none; /* Hide scroll bar */
+        }
+        .experience-card {
+            min-width: 250px;
+            background-color: #292929;
+            padding: 20px;
+            border-radius: 8px;
+            color: #f0f0f0;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+            cursor: pointer;
+        }
+        .experience-card:hover {
+            transform: scale(1.05);
+        }
+        .experience-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .experience-date {
+            color: #a0a0a0;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .experience-description {
+            color: #c9c9c9;
+            font-size: 0.95em;
+            line-height: 1.4;
+            opacity: 0; /* Start as invisible */
+            transition: opacity 0.3s ease; /* Transition effect */
+            pointer-events: none; /* Prevent interaction when hidden */
+        }
+
+        /* Show the description on hover */
+        .experience-card:hover .experience-description {
+            opacity: 1; /* Fully opaque on hover */
+            pointer-events: auto; /* Enable interaction when visible */ 
+        }
+
+        .experience-image {
+            width: 100%;
+            height: 120px;
+            border-radius: 5px;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 10px;
+        }
+
+        /* Interests Section */
+        .interests-section {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .interests-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        .interests-list {
+            display: flex; /* Change to flex to align items in a row */
+            justify-content: center; /* Center items */
+            margin-bottom: 20px;
+        }
+        .interest-item {
+            cursor: pointer;
+            margin: 0 10px; /* Add some margin for spacing */
+            transition: color 0.3s;
+        }
+        .interest-item:hover {
+            color: #ffaa1d; /* Change color on hover #ffaa1d*/
+        }
+        .interest-detail {
+            display: none; /* Hidden by default */
+            margin-top: 10px;
+            background: rgba(40, 40, 40, 0.8);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            margin-top: 40px;
+            text-align: center;
+            padding: 20px;
+            background-color: #292929;
+            border-radius: 8px;
+        }
+        .contact-section h2 {
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        .contact-info {
+            font-size: 1.1em;
+            color: #c9c9c9;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="cover-image"></div>
+
+<div class="container">
+    <!-- Header Section -->
+    <header>
+        <img src="My Photo 2.jpg" alt="Your Name's Photo" class="profile-img">
+        <h1>Sarang Kadampanal</h1>
+        <p>4th Year Electrical Engineering Student | South Africa</p>
+    </header>
+
+    <!-- Summary and Skills Section -->
+    <div class="summary">
+        <div class="summary-text">
+            <p>Starting 4th Year Electrical Engineering student in the University of Pretoria with only Final Year Project (EPR 400) remaining as a module. Proven ability to solve problems, think critically, work in a team and learn fast. Proficient at using industry standard software such as MATLAB, Simulink and AutoCAD. Proficient in Python, embedded systems design, assembly (for PICs) and PLC. Have previous experience in client relations and can interact with (sometimes difficult) clients. Proficient in 3D-printing software and knowledgeable in hardware and software of computer systems. I can work well under pressure and can operate well in a teamwork environment. Since only one module remains, I can confidentially manage both working and studying.</p>
+        </div>
+        <div class="skills">
+            <h2>Skills</h2>
+            <div class="skill-bar">
+                <div class="skill">
+                    <span>Technical Reports</span><span>90%</span>
+                </div>
+                <div class="skill-level"><span style="width: 90%;"></span></div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill">
+                    <span>Critical Thinking and Problem Solving</span><span>90%</span>
+                </div>
+                <div class="skill-level"><span style="width: 90%;"></span></div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill">
+                    <span>Communication</span><span>80%</span>
+                </div>
+                <div class="skill-level"><span style="width: 80%;"></span></div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill">
+                    <span>CAD, MATLAB, Embedded Design</span><span>80%</span>
+                </div>
+                <div class="skill-level"><span style="width: 80%;"></span></div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill">
+                    <span>IT-systems</span><span>80%</span>
+                </div>
+                <div class="skill-level"><span style="width: 80%;"></span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Work Experience Section -->
+    <section class="experience-section">
+        <h2>Experience</h2>
+        <div class="experience-container">
+            <!-- Work Experience Block 1 -->
+            <div class="experience-card">
+                <div class="experience-image" style="background-image: url('ALUMO.jpeg');"></div>
+                <div class="experience-date">Jul 2024 - Aug 2024</div>
+                <div class="experience-title">Intern at ALUMO Energy</div>
+                <div class="experience-description">  
+                    <p>Streamline and automate calculations for the solar systems and assisted in designing large and small scale solar systems including a 1.2MW system. Gained experience working and interacting with clients.</p>
+                </div>
+            </div>
+            <!-- Work Experience Block 2 -->
+            <div class="experience-card">
+                <div class="experience-image" style="background-image: url('TUKS.jpeg');"></div>
+                <div class="experience-date">Aug 2024 - Nov 2024</div>
+                <div class="experience-title">Demi at the University of Pretoria</div>
+                <div class="experience-description">
+                    <p>Assisted in the marking of technical reports and posters for ERS 220 alongside marking practicals and invigilating tests for ERS 220 and EBB320. Appointed by Prof. Trudi Joubert and Prof. Le Roux respectively.</p>
+                </div>
+            </div>
+            <!-- Work Experience Block 3 -->
+            <div class="experience-card">
+                <div class="experience-image" style="background-image: url('Electro Systems.jpeg');"></div>
+                <div class="experience-date">Jan 2024 - Feb 2024</div>
+                <div class="experience-title">Intern at Electro Systems</div>
+                <div class="experience-description">
+                    <p>Wiring distribution boards, motor control panels and programming PLCs. Client interactions in order to understand their needs.</p>
+                </div>
+            </div>
+
+            <!-- Work Experience Block 4 -->
+            <div class="experience-card">
+                <div class="experience-image" style="background-image: url('AYMSA.png');"></div>
+                <div class="experience-date">Dec 2023 - Present </div>
+                <div class="experience-title">Event planner for AYMSA.</div>
+                <div class="experience-description">
+                    <p>Gained valuable experience organizing events and leading a team of individuals towards a common goal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests Section -->
+    <section class="interests-section">
+        <h2 class="interests-title">Interests</h2>
+        <div class="interests-list">
+            <div class="interest-item" onclick="showDetail('interest1')">Innovative Technology</span></div>
+            <div class="interest-item" onclick="showDetail('interest2')">Electric Machinery</span></div>
+            <div class="interest-item" onclick="showDetail('interest3')">Power Electronics</span></div>
+            <div class="interest-item" onclick="showDetail('interest4')">Automation</span></div>
+        </div>
+        <div id="interest-detail" class="interest-detail"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h2>Contact Information</h2>
+        <div class="contact-info">
+            <p>Email: sarangkadampanal2@gmail.com</p>
+            <p>Phone: +27 60 439 1974 </p>
+        </div>
+    </section>
+</div>
+
+<script>
+    // Function to show detailed interest
+    function showDetail(interest) {
+        const detailBox = document.getElementById('interest-detail');
+        switch (interest) {
+            case 'interest1':
+                detailBox.innerHTML = "<h3>Innovative Technology</h3><p>Solving problems and improving existing technology has always appealed to me, and the more I learn about existing technology, the more it interests me.</p>";
+                break;
+            case 'interest2':
+                detailBox.innerHTML = "<h3>Electric Machinery</h3><p>My first interest was mechanical engineering solely because I enjoy working with machinery, specifically automobiles. With the current advances in electric vehicles, my interest in motors, electrical drives, and other such technology has piqued my interest.</p>";
+                break;
+            case 'interest3':
+                detailBox.innerHTML = "<h3>Power Electronics</h3><p>I enjoy learning about power electronics and high-frequency systems and have a thorough fundamental theoretical understanding of it, despite lacking practical experience.</p>";
+                break;
+            case 'interest4':
+                detailBox.innerHTML = "<h3>Automation</h3><p>Control systems is a very interesting field and is used in a wide variety of applications, but automation stands out in its application since most plants are becoming fully automated.</p>";
+                break;
+        }
+        detailBox.style.display = 'block'; // Show the detail box
+    }
+</script>
+
+</body>
+</html>
